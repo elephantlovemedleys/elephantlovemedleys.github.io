@@ -252,8 +252,8 @@
   <table>
     <thead><tr><th><input type="checkbox" id="all" aria-label="Select all"></th><th>Title</th><th>Tour</th><th>Date</th><th>Master</th><th>Type</th></tr></thead>
     <tbody id="rows">
-      <tr><td><input type="checkbox" aria-label="Select row"></td><td class="title">13</td><td class="tour">Broadway</td><td class="date">2008-09-16</td><td class="master">	SunsetBlvd79</td><td><span class="type video">Video</span></td></tr>
-      <tr><td><input type="checkbox" aria-label="Select row"></td><td class="title">13 Going on 30</td><td class="tour">Workshop</td><td class="date">2023-10-25</td><td class="master">forfivemoreminutes</td><td><span class="type audio">Audio</span></td></tr>
+      <tr><td><input type="checkbox" aria-label="Select row" id="myInput"></td><td class="title">13</td><td class="tour">Broadway</td><td class="date">2008-09-16</td><td class="master">	SunsetBlvd79</td><td><span class="type video">Video</span></td></tr>
+      <tr><td><input type="checkbox" aria-label="Select row" id="myInput"></td><td class="title">13 Going on 30</td><td class="tour">Workshop</td><td class="date">2023-10-25</td><td class="master">forfivemoreminutes</td><td><span class="type audio">Audio</span></td></tr>
     </tbody>
   </table>
 </div>
@@ -280,9 +280,6 @@ function myFunction() {
 
    // Copy the text inside the text field
   navigator.clipboard.writeText(copyText.value);
-
-  // Alert the copied text
-  alert("Copied the text: " + copyText.value);
 }
 boxes.forEach(b => b.addEventListener('change', sync));
 all.addEventListener('change', () => { boxes.forEach(b => b.checked = all.checked); sync(); });
