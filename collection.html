@@ -280,6 +280,9 @@ function myFunction() {
 
    // Copy the text inside the text field
   navigator.clipboard.writeText(copyText.value);
+
+  // Alert the copied text
+  alert("Copied to clipboard!");
 }
 boxes.forEach(b => b.addEventListener('change', sync));
 all.addEventListener('change', () => { boxes.forEach(b => b.checked = all.checked); sync(); });
