@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +21,7 @@
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial, sans-serif;
     line-height: 1.6;
   }
 
@@ -53,6 +54,10 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
+    min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   }
 
   nav a.active {
@@ -61,6 +66,22 @@
   }
 
   nav svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  @media (max-width: 420px) {
+  nav {
+    gap: 2px;
+    padding: 4px;
+  }
+  nav a {
+    font-size: 12px;
+    padding: 8px 4px;
+    gap: 4px;
+  }
+  nav svg {
+    width: 13px;
+    height: 13px;
+  }
+}
 
   /* Header */
   .profile-header {
@@ -109,26 +130,6 @@
 
   .emoji { margin: 0 1px; }
 
-  /* Socials */
-  .socials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 22px;
-    margin: 28px 0 40px;
-  }
-
-  .socials a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-dim);
-    text-decoration: none;
-    font-size: 14px;
-  }
-
-  .socials a:hover { color: var(--text); }
-
-  .socials svg { width: 17px; height: 17px; }
 </style>
 </head>
 <body>
@@ -154,7 +155,7 @@
   </nav>
 
   <div class="profile-header">
-    <img class="avatar" src="https://github.com/elephantlovemedleys/elephantlovemedleys.github.io/blob/945d39092d6df176a7a621135a4537314351f249/zca20a1f53b3a03596f8af420826d0ff9.png?raw=true">
+    <img class="avatar" src="https://imgur.com/Jgbc7M6">
     <div>
       <h1>elephantlovemedleys ♡</h1>
       <p>art credit lotusbubble</p>
