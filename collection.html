@@ -174,14 +174,20 @@
   tbody tr.sel:hover
   {background:#e8effd}
 
-  .name
+  .title
   {font-weight:600;
    color:#182030}
 
-  .email
+  .tour
   {color:#69758d}
 
-  .role
+  .date
+  {color:#69758d}
+
+  .master
+  {color:#69758d}
+
+  .type
   {font-size:.75rem;
    font-weight:700;
    padding:3px 10px;
@@ -189,9 +195,13 @@
    background:#eef1f6;
    color:#4a5670}
 
-  .role.admin
+  .type.video
   {background:#e7edff;
    color:#2b4acb}
+
+  .type.audio
+  {background:#ffe7e7;
+   color:#cb2b2b}
 
 </style>
 </head>
@@ -222,17 +232,14 @@
 
 <div class="table-wrap">
   <div class="toolbar">
-    <h1>Team members</h1>
+    <h1>Collection</h1>
     <div class="bulk" id="bulk"><span id="n"></span><button>Request</button><button class="danger">Cancel</button></div>
   </div>
   <table>
-    <thead><tr><th><input type="checkbox" id="all" aria-label="Select all"></th><th>Name</th><th>Email</th><th>Role</th></tr></thead>
+    <thead><tr><th><input type="checkbox" id="all" aria-label="Select all"></th><th>Title</th><th>Tour</th><th>Date</th><th>Master</th><th>Type</th></tr></thead>
     <tbody id="rows">
-      <tr><td><input type="checkbox" aria-label="Select row"></td><td class="name">Maja Lindgren</td><td class="email">maja@corvid.ai</td><td><span class="role admin">Admin</span></td></tr>
-      <tr><td><input type="checkbox" aria-label="Select row"></td><td class="name">Diego Fuentes</td><td class="email">diego@corvid.ai</td><td><span class="role">Editor</span></td></tr>
-      <tr><td><input type="checkbox" aria-label="Select row"></td><td class="name">Amara Obi</td><td class="email">amara@corvid.ai</td><td><span class="role">Editor</span></td></tr>
-      <tr><td><input type="checkbox" aria-label="Select row"></td><td class="name">Jonas Weber</td><td class="email">jonas@corvid.ai</td><td><span class="role">Viewer</span></td></tr>
-      <tr><td><input type="checkbox" aria-label="Select row"></td><td class="name">Yuki Tanaka</td><td class="email">yuki@corvid.ai</td><td><span class="role">Viewer</span></td></tr>
+      <tr><td><input type="checkbox" aria-label="Select row"></td><td class="title">13</td><td class="tour">Broadway</td><td class="date">2008-09-16</td><td class="master">	SunsetBlvd79</td><td><span class="type video">Video</span></td></tr>
+      <tr><td><input type="checkbox" aria-label="Select row"></td><td class="title">13 Going on 30</td><td class="tour">Workshop</td><td class="date">2023-10-25</td><td class="master">forfivemoreminutes</td><td><span class="type audio">Audio</span></td></tr>
     </tbody>
   </table>
 </div>
