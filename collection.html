@@ -91,16 +91,21 @@
    box-shadow:0 14px 32px -18px rgba(18,28,48,.16)}
   
   .toolbar
-  {display:flex;
-   align-items:center;
+  {align-items:center;
    justify-content:space-between;
    padding:15px 20px;
    border-bottom:1px solid #ecf0f6;
-   min-height:62px}
+   min-height:80px}
 
   h1
   {font-size:1rem;
    letter-spacing:-.01em}
+
+  p {
+  margin-top: 4px;
+  font-size: .82rem;
+  color: var(--text-dim);
+}
 
   .bulk
   {display:none;
@@ -108,7 +113,7 @@
    gap:10px}
 
   .bulk.show
-  {display:flex}
+  {display:flex;}
 
   .bulk span
   {font-size:.85rem;
@@ -233,6 +238,7 @@
 <div class="table-wrap">
   <div class="toolbar">
     <h1>Collection</h1>
+    <p>Select the items you want, press "Request" and it will copy them to your clipboard. Just head to "Contact" and paste them to send a trade request.</p>
     <div class="bulk" id="bulk"><span id="n"></span><button>Request</button><button class="danger">Cancel</button></div>
   </div>
   <table>
