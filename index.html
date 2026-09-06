@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>elephantlovemedleys</title>
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --surface: #161616;
+    --border: #2a2a2a;
+    --text: #e6e6e6;
+    --text-dim: #9a9a9a;
+    --accent: #f2b90c;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+  /* Nav */
+  nav {
+    display: flex;
+    gap: 4px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 6px;
+    margin-bottom: 40px;
+  }
+
+  nav a {
+    flex: 1;
+    text-align: center;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  nav a.active {
+    background: #232323;
+    color: var(--text);
+  }
+
+  nav svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  /* Header */
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: linear-gradient(135deg, #444, #222);
+    flex-shrink: 0;
+  }
+
+  .profile-header h1 {
+    font-size: 22px;
+    margin: 0 0 4px;
+    font-weight: 700;
+  }
+
+  .profile-header p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 14px;
+  }
+
+  /* Bio */
+  .bio p {
+    font-size: 15px;
+    color: #d6d6d6;
+    margin: 0 0 20px;
+  }
+
+  .bio a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: #555;
+    text-underline-offset: 2px;
+  }
+
+  .bio a:hover { text-decoration-color: var(--text); }
+
+  .emoji { margin: 0 1px; }
+
+  /* Socials */
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin: 28px 0 40px;
+  }
+
+  .socials a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .socials a:hover { color: var(--text); }
+
+  .socials svg { width: 17px; height: 17px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a href="#" class="active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>
+      Home
+    </a>
+    <a href="/collection">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+      Collection
+    </a>
+    <a href="/wants">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
+      Wants
+    </a>
+    <a href="/request">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+      Request
+    </a>
+  </nav>
+
+  <div class="profile-header">
+    <img class="avatar" src="https://imgur.com/Jgbc7M6">
+    <div>
+      <h1>elephantlovemedleys ♡</h1>
+      <p>art credit lotusbubble</p>
+    </div>
+  </div>
+
+  <div class="bio">
+    <p><b>hello!</b></p>
+
+    <p>i mostly collect videos, but i am open to trading for audios as well.</p>
+
+    <p>as i'm currently <b>open for limited trades</b>, i might not accept all trades, but feel free to contact me if you see anything of interest in my list!
+
+</p>
+
+    <p><b>rules:</b></p>
+
+    <ul>
+        <li>please respect NFT dates. if you ask for a recording that is NFT, i will not proceed with the trade.</li>
+        <li>no scheduled or 'this for that' trades, please.</li>
+        <li>i prefer small trades (1-3 items), but i'm open to larger trades as well.</li>
+        <li>original files only. if one or more of the items on my list suspiciously look like a rip to you, please reach out!</li>
+        <li>i only trade through mega. i will accept non-mega links, but please don't ask me to upload my files elsewhere.</li>
+        <li>whoever initiates the trade sends the link(s) first.</li>
+        <li>when requesting a trade, please send me your list as well as the summary of the recording(s) you're looking to trade for (not just a link).</li>
+        <li>i usually respond within a day, but if 3 days have passed without a response, feel free to contact me again.</li>
+        <li>links will be active for a week, after which they will expire.</li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>
