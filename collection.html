@@ -135,7 +135,8 @@
   {background:#f2f5fa}
 
   .bulk .danger
-  {color:#b42323;border-color:#f1c8c8}
+  {color:#b42323;
+   border-color:#f1c8c8}
 
   .bulk .danger:hover
   {background:#fdf1f1}
@@ -245,7 +246,7 @@
   <div class="toolbar">
     <h1>Collection</h1>
     <p>Select the items you want, press "Request" and it will copy them to your clipboard. Just head to "Contact" and paste them to send a trade request.</p>
-    <div class="bulk" id="bulk"><span id="n"></span><button onclick="myFunction()">Request</button><button class="danger">Cancel</button></div>
+    <div class="bulk" id="bulk"><span id="n"></span><button onclick="myFunction()">Request</button><button class="danger" onclick="clearSelection()">Cancel</button></div>
   </div>
     
   <div class="table-scroll">
@@ -290,6 +291,10 @@ function myFunction() {
   navigator.clipboard.writeText(text)
     .then(() => alert("Copied to clipboard!"))
     .catch(() => alert("Copy failed — please try again."));
+}
+  function clearSelection() {
+  boxes.forEach(b => b.checked = false);
+  sync();
 }
 boxes.forEach(b => b.addEventListener('change', sync));
 all.addEventListener('change', () => { boxes.forEach(b => b.checked = all.checked); sync(); });
