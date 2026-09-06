@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/a50c1e22d9.js" crossorigin="anonymous"></script>
 <title>elephantlovemedleys</title>
 <style>
   :root {
@@ -174,6 +175,39 @@
   -webkit-overflow-scrolling: touch;
 }
 
+  .row {
+  cursor: pointer;
+}
+
+.detail td {
+  padding: 0;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.detail .inner {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .25s ease;
+}
+
+.detail.open .inner {
+  max-height: 200px;
+}
+
+.inner div {
+  padding: 14px 20px 16px 20px;
+  background: var(--hover);
+  border-top: 1px dashed var(--border);
+  font-size: .82rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+.inner b {
+  color: var(--text);
+}
+
   table
   {width:100%;
    min-width: 640px;
@@ -290,8 +324,24 @@
   <table>
     <thead><tr><th><input type="checkbox" id="all" aria-label="Select all"></th><th>Title</th><th>Tour</th><th>Date</th><th>Master</th><th>Type</th></tr></thead>
     <tbody id="rows">
-      <tr><td><input type="checkbox" aria-label="Select row"></td><td class="title">13</td><td class="tour">Broadway</td><td class="date">2008-09-16</td><td class="master">	SunsetBlvd79</td><td><span class="type video">Video</span></td></tr>
-      <tr><td><input type="checkbox" aria-label="Select row"></td><td class="title">13 Going on 30</td><td class="tour">Workshop</td><td class="date">2023-10-25</td><td class="master">forfivemoreminutes</td><td><span class="type audio">Audio</span></td></tr>
+<!-- new entry ------------------------------------------------------------>
+  <tr class="row">
+    <td><input type="checkbox" aria-label="Select row"></td>
+    <td class="title">13</td>
+    <td class="tour">Broadway</td>
+    <td class="date">2008-09-16</td>
+    <td class="master">SunsetBlvd79</td>
+    <td><span class="type video">Video</span></td>
+  </tr>
+  <tr class="detail">
+    <td colspan="6">
+      <div class="inner">
+        <div><b>Cast:</b> Graham Phillips (Evan Goldman), Allie Trimm (Patrice), Aaron Simon Gross (Archie), Eric Nelsen (Brett), Delaney Moro (Kendra), Elizabeth Gillies (Lucy), Al Calderon (Eddie), Malik Hammond (Malcolm), Caitlin Gann (Molly), Ariana Grande (Charlotte), Brynn Williams (Cassie), Joey LaVarco (Simon), Eamon Foley (Ritchie)</br>
+<b>Notes:</b> First Preview. Wonderful, fun and cute show. The young actors are very talented and great performers. High energy from the audience as it was the first performance. Beautiful capture and a solid show with terrific music by Jason Robert Brown. A+</br>
+<b>Format:</b> VOB + smalls (3.82 GB)</div>
+      </div>
+    </td>
+  </tr>
     </tbody>
   </table>
 </div>
@@ -308,6 +358,7 @@ function sync(){
   all.checked = n === boxes.length;
   all.indeterminate = n > 0 && n < boxes.length;
 }
+  
 function myFunction() {
   const selectedRows = boxes.filter(b => b.checked).map(b => b.closest('tr'));
 
@@ -335,6 +386,14 @@ function myFunction() {
 }
 boxes.forEach(b => b.addEventListener('change', sync));
 all.addEventListener('change', () => { boxes.forEach(b => b.checked = all.checked); sync(); });
+  
+ document.querySelectorAll('.row').forEach(r => {
+  r.addEventListener('click', (e) => {
+    if (e.target.tagName === 'INPUT') return;
+    r.classList.toggle('open');
+    r.nextElementSibling.classList.toggle('open');
+  });
+});
 </script>   
 </body>
 </html>
