@@ -140,8 +140,13 @@
   .bulk .danger:hover
   {background:#fdf1f1}
 
+  .table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
   table
-  {width:100%;
+  {min-width: 640px;
    border-collapse:collapse;
    font-size:.88rem}
 
@@ -235,12 +240,13 @@
   </nav>
 
 
-<div class="table-wrap">
+  <div class="table-wrap">
   <div class="toolbar">
     <h1>Collection</h1>
     <p>Select the items you want, press "Request" and it will copy them to your clipboard. Just head to "Contact" and paste them to send a trade request.</p>
     <div class="bulk" id="bulk"><span id="n"></span><button>Request</button><button class="danger">Cancel</button></div>
   </div>
+  <div class="table-scroll">
   <table>
     <thead><tr><th><input type="checkbox" id="all" aria-label="Select all"></th><th>Title</th><th>Tour</th><th>Date</th><th>Master</th><th>Type</th></tr></thead>
     <tbody id="rows">
@@ -248,6 +254,7 @@
       <tr><td><input type="checkbox" aria-label="Select row"></td><td class="title">13 Going on 30</td><td class="tour">Workshop</td><td class="date">2023-10-25</td><td class="master">forfivemoreminutes</td><td><span class="type audio">Audio</span></td></tr>
     </tbody>
   </table>
+</div>
 </div>
 </div>
 <script>
