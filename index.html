@@ -1,218 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>elephantlovemedleys</title>
-<style>
-  :root {
-  --bg: #f5f7fa;
-  --surface: #ffffff;
-  --border: #e5eaf2;
-  --text: #182030;
-  --text-dim: #69758d;
-  --accent: #2563eb;
-  --hover: #f7fafd;
-}
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elephantlovemedleys</title>
+    <style>
+      :root {
+        --bg: #f5f7fa;
+        --surface: #ffffff;
+        --border: #e5eaf2;
+        --text: #182030;
+        --text-dim: #69758d;
+        --accent: #2563eb;
+        --hover: #f7fafd;
+      }
 
-  * { box-sizing: border-box; }
+      * {
+        box-sizing: border-box;
+      }
 
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial, sans-serif;
-    line-height: 1.6;
-  }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+      }
 
-  .wrap {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 24px 20px 60px;
-  }
+      .wrap {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px 20px 60px;
+      }
 
-  /* Nav */
-  nav {
-    display: flex;
-    gap: 4px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 6px;
-    margin-bottom: 40px;
-  }
+      /* Nav */
+      nav {
+        display: flex;
+        gap: 4px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 6px;
+        margin-bottom: 40px;
+      }
 
-  nav a {
-    flex: 1;
-    text-align: center;
-    color: var(--text-dim);
-    text-decoration: none;
-    font-size: 14px;
-    padding: 8px 10px;
-    border-radius: 7px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    min-width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  }
+      nav a {
+        flex: 1;
+        text-align: center;
+        color: var(--text-dim);
+        text-decoration: none;
+        font-size: 14px;
+        padding: 8px 10px;
+        border-radius: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
 
-  nav a.active {
-  background: var(--hover);
-  color: var(--text);
-}
+      nav a.active {
+        background: var(--hover);
+        color: var(--text);
+      }
 
-  nav svg { width: 15px; height: 15px; flex-shrink: 0; }
+      nav svg {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+      }
 
-  @media (max-width: 420px) {
-  nav {
-    gap: 2px;
-    padding: 4px;
-  }
-  nav a {
-    font-size: 12px;
-    padding: 8px 4px;
-    gap: 4px;
-  }
-  nav svg {
-    width: 13px;
-    height: 13px;
-  }
-}
+      @media (max-width: 420px) {
+        nav {
+          gap: 2px;
+          padding: 4px;
+        }
 
-  /* Header */
-  .profile-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 28px;
-  }
+        nav a {
+          font-size: 12px;
+          padding: 8px 4px;
+          gap: 4px;
+        }
 
-  .avatar {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: linear-gradient(135deg, #444, #222);
-    flex-shrink: 0;
-  }
+        nav svg {
+          width: 13px;
+          height: 13px;
+        }
+      }
 
-  .profile-header h1 {
-    font-size: 22px;
-    margin: 0 0 4px;
-    font-weight: 700;
-  }
+      /* Header */
+      .profile-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
 
-  .profile-header p {
-    margin: 0;
-    color: var(--text-dim);
-    font-size: 14px;
-  }
+      .avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: linear-gradient(135deg, #444, #222);
+        flex-shrink: 0;
+      }
 
-  /* Bio */
-  .bio p {
-    font-size: 15px;
-    color: var(--text);
-    margin: 0 0 20px;
-  }
+      .profile-header h1 {
+        font-size: 22px;
+        margin: 0 0 4px;
+        font-weight: 700;
+      }
 
-  .bio a {
-    color: var(--text);
-    text-decoration: underline;
-    text-decoration-color: #555;
-    text-underline-offset: 2px;
-  }
+      .profile-header p {
+        margin: 0;
+        color: var(--text-dim);
+        font-size: 14px;
+      }
 
-  .bio a:hover { text-decoration-color: var(--text); }
+      /* Bio */
+      .bio p {
+        font-size: 15px;
+        color: var(--text);
+        margin: 0 0 20px;
+      }
 
-  .emoji { margin: 0 1px; }
+      .bio a {
+        color: var(--text);
+        text-decoration: underline;
+        text-decoration-color: #555;
+        text-underline-offset: 2px;
+      }
 
-  .rules-wrap {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  box-shadow: 0 14px 32px -18px rgba(18,28,48,.16);
-  padding: 20px 24px;
-  margin-top: 20px;
-}
+      .bio a:hover {
+        text-decoration-color: var(--text);
+      }
 
-.rules-wrap p {
-  margin: 0 0 12px;
-}
+      .emoji {
+        margin: 0 1px;
+      }
 
-.rules-wrap ul {
-  margin: 0;
-  padding-left: 20px;
-}
+      .rules-wrap {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: 0 14px 32px -18px rgba(18, 28, 48, .16);
+        padding: 20px 24px;
+        margin-top: 20px;
+      }
 
-.rules-wrap li {
-  margin-bottom: 8px;
-  color: var(--text);
-}
+      .rules-wrap p {
+        margin: 0 0 12px;
+      }
 
-.rules-wrap li:last-child {
-  margin-bottom: 0;
-}
+      .rules-wrap ul {
+        margin: 0;
+        padding-left: 20px;
+      }
 
-</style>
-</head>
-<body>
-<div class="wrap">
+      .rules-wrap li {
+        margin-bottom: 8px;
+        color: var(--text);
+      }
 
-  <nav>
-    <a href="#" class="active">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>
-      Home
-    </a>
-    <a href="/collection.html">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-      Collection
-    </a>
-    <a href="/wants.html">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-</svg>
-      Wants
-    </a>
-    <a href="/contact.html">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
-      Contact
-    </a>
-  </nav>
-
-  <div class="profile-header">
-    <img class="avatar" src="https://raw.githubusercontent.com/elephantlovemedleys/elephantlovemedleys.github.io/refs/heads/main/zca20a1f53b3a03596f8af420826d0ff9.png">
-    <div>
-      <h1>elephantlovemedleys ♡</h1>
-      <p>est. jan 2026 | currently <u>open for limited trades</u> | art credit lotusbubble</p>
+      .rules-wrap li:last-child {
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <nav>
+        <a href="#" class="active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12l9-9 9 9" />
+            <path d="M5 10v10h14V10" />
+          </svg> Home </a>
+        <a href="/collection.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="7" width="18" height="13" rx="2" />
+            <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+          </svg> Collection </a>
+        <a href="/wants.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+          </svg> Wants </a>
+        <a href="/contact.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16v16H4z" />
+            <path d="M8 8h8M8 12h8M8 16h5" />
+          </svg> Contact </a>
+      </nav>
+      <div class="profile-header">
+        <img class="avatar" src="https://raw.githubusercontent.com/elephantlovemedleys/elephantlovemedleys.github.io/refs/heads/main/zca20a1f53b3a03596f8af420826d0ff9.png">
+        <div>
+          <h1>elephantlovemedleys ♡</h1>
+          <p>est. jan 2026 | currently <u>open for limited trades</u> | art credit lotusbubble </p>
+        </div>
+      </div>
+      <div class="bio">
+        <p>Hi there, welcome to my trading site! </br> Here you will find a comprehensive list of all recordings in my collection. As you will see, I mostly collect videos, but I'm always open to trade for audios as well. </br>Always feel free to contact me, which you can do via the contact form in the navigation. However, depending on my trading status, I might not accept the trade. Limited trades = only trading for wants. You can still contact me even if you don't have them, but again, I might not accept the trade. </p>
+        <div class="rules-wrap">
+          <p>
+            <b>Rules:</b>
+          </p>
+          <ul>
+            <li>Please respect NFT dates. If you ask for a recording that is NFT, I will not proceed with the trade.</li>
+            <li>No scheduled or 'this for that' trades, please.</li>
+            <li>I prefer small trades (1-5 items), but I'm open to larger trades as well.</li>
+            <li>Original files only. If one or more of the items on my list suspiciously look like a rip to you, please reach out!</li>
+            <li>I only trade through Mega. I will accept non-Mega links, but please don't ask me to upload my files elsewhere.</li>
+            <li>Whoever initiates the trade sends the link(s) first.</li>
+            <li>When requesting a trade, please send me your list as well as the summary of the recording(s) you're looking to trade for (select your desired items and press "Request" to copy the summary to clipboard).</li>
+            <li>I usually respond within a day, but if 3 days have passed without a response, feel free to contact me again.</li>
+            <li>Links will be active for a week, after which they will expire.</li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="bio">
-    <p>Hi there, welcome to my trading site! 
-  </br> Here you will find a comprehensive list of all recordings in my collection. As you will see, I mostly collect videos, but I'm always open to trade for audios as well.
-  </br>Always feel free to contact me, which you can do via the contact form in the navigation. However, depending on my trading status, I might not accept the trade. Limited trades = only trading for wants. You can still contact me even if you don't have them, but again, I might not accept the trade.</p>
-
-     <div class="rules-wrap">
-    <p><b>Rules:</b></p>
-
-    <ul>
-        <li>Please respect NFT dates. If you ask for a recording that is NFT, I will not proceed with the trade.</li>
-        <li>No scheduled or 'this for that' trades, please.</li>
-        <li>I prefer small trades (1-5 items), but I'm open to larger trades as well.</li>
-        <li>Original files only. If one or more of the items on my list suspiciously look like a rip to you, please reach out!</li>
-        <li>I only trade through Mega. I will accept non-Mega links, but please don't ask me to upload my files elsewhere.</li>
-        <li>Whoever initiates the trade sends the link(s) first.</li>
-        <li>When requesting a trade, please send me your list as well as the summary of the recording(s) you're looking to trade for (select your desired items and press "Request" to copy the summary to clipboard).</li>
-        <li>I usually respond within a day, but if 3 days have passed without a response, feel free to contact me again.</li>
-        <li>Links will be active for a week, after which they will expire.</li>
-    </ul>
-     </div>
-  </div>
-
-</div>
-</body>
+  </body>
 </html>
