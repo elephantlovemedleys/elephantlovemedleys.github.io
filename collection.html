@@ -252,8 +252,8 @@
   <table>
     <thead><tr><th><input type="checkbox" id="all" aria-label="Select all"></th><th>Title</th><th>Tour</th><th>Date</th><th>Master</th><th>Type</th></tr></thead>
     <tbody id="rows">
-      <tr><td><input type="checkbox" aria-label="Select row" id="myInput"></td><td class="title">13</td><td class="tour">Broadway</td><td class="date">2008-09-16</td><td class="master">	SunsetBlvd79</td><td><span class="type video">Video</span></td></tr>
-      <tr><td><input type="checkbox" aria-label="Select row" id="myInput"></td><td class="title">13 Going on 30</td><td class="tour">Workshop</td><td class="date">2023-10-25</td><td class="master">forfivemoreminutes</td><td><span class="type audio">Audio</span></td></tr>
+      <tr><td><input type="checkbox" aria-label="Select row"></td><td class="title">13</td><td class="tour">Broadway</td><td class="date">2008-09-16</td><td class="master">	SunsetBlvd79</td><td><span class="type video">Video</span></td></tr>
+      <tr><td><input type="checkbox" aria-label="Select row"></td><td class="title">13 Going on 30</td><td class="tour">Workshop</td><td class="date">2023-10-25</td><td class="master">forfivemoreminutes</td><td><span class="type audio">Audio</span></td></tr>
     </tbody>
   </table>
 </div>
@@ -271,18 +271,25 @@ function sync(){
   all.indeterminate = n > 0 && n < boxes.length;
 }
 function myFunction() {
-  // Get the text field
-  var copyText = document.getElementById("myInput");
+  const selectedRows = boxes.filter(b => b.checked).map(b => b.closest('tr'));
 
-  // Select the text field
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); // For mobile devices
+  if (selectedRows.length === 0) {
+    alert("No items selected!");
+    return;
+  }
 
-   // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.value);
+  const text = selectedRows.map(row => {
+    const title = row.querySelector('.title').textContent.trim();
+    const tour = row.querySelector('.tour').textContent.trim();
+    const date = row.querySelector('.date').textContent.trim();
+    const master = row.querySelector('.master').textContent.trim();
+    const type = row.querySelector('.type').textContent.trim();
+    return `${title} | ${tour} | ${date} | ${master} | ${type}`;
+  }).join('\n');
 
-  // Alert the copied text
-  alert("Copied to clipboard!");
+  navigator.clipboard.writeText(text)
+    .then(() => alert("Copied to clipboard!"))
+    .catch(() => alert("Copy failed — please try again."));
 }
 boxes.forEach(b => b.addEventListener('change', sync));
 all.addEventListener('change', () => { boxes.forEach(b => b.checked = all.checked); sync(); });
