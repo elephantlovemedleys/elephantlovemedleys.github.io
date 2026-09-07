@@ -122,6 +122,54 @@
         font-size: 14px;
       }
 
+      .filters {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+
+      #input,
+      #Type {
+        font-family: inherit;
+        font-size: .85rem;
+        color: var(--text);
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 9px 14px;
+        outline: none;
+        transition: border-color .15s, box-shadow .15s;
+        margin-top: 15px;
+      }
+
+      #input {
+        flex: 1;
+        min-width: 160px;
+      }
+
+      #input::placeholder {
+        color: var(--text-dim);
+      }
+
+      #Type {
+        cursor: pointer;
+      }
+
+      #Type:hover {
+        background-color: var(--hover);
+      }
+
+      @media (max-width: 420px) {
+
+        #input,
+        #Type {
+          font-size: .8rem;
+          padding: 8px 12px;
+        }
+      }
+
       .table-wrap {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -366,6 +414,12 @@
             <button onclick="myFunction()">Request</button>
             <button class="danger" onclick="clearSelection()">Cancel</button>
           </div>
+          <input id="input" type="search" placeholder="Search recordings..." aria-label="Search">
+          <select id="Type">
+            <option value="">All</option>
+            <option value="type video">Video</option>
+            <option value="type audio">Audio</option>
+          </select>
         </div>
         <div class="table-scroll">
           <table>
@@ -457,6 +511,33 @@
           r.nextElementSibling.classList.toggle('open');
         });
       });
+      const searchInput = document.getElementById('input');
+      const typeSelect = document.getElementById('Type');
+      const dataRows = [...document.querySelectorAll('#rows > tr.row')];
+
+      function filterRows() {
+        const query = searchInput.value.trim().toLowerCase();
+        const typeFilter = typeSelect.value;
+        dataRows.forEach(row => {
+          const detail = row.nextElementSibling;
+          const searchableText = (row.textContent + ' ' + (detail ? detail.textContent : '')).toLowerCase();
+          const typeSpan = row.querySelector('.type');
+          const rowType = typeSpan ? typeSpan.className.trim() : '';
+          const matchesSearch = query === '' || searchableText.includes(query);
+          const matchesType = typeFilter === '' || rowType === typeFilter;
+          const visible = matchesSearch && matchesType;
+          row.style.display = visible ? '' : 'none';
+          if (detail) {
+            detail.style.display = visible ? '' : 'none';
+            if (!visible) {
+              row.classList.remove('open');
+              detail.classList.remove('open');
+            }
+          }
+        });
+      }
+      searchInput.addEventListener('input', filterRows);
+      typeSelect.addEventListener('change', filterRows);
     </script>
   </body>
 </html>
