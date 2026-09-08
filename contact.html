@@ -180,7 +180,7 @@
         margin-bottom:16px;
         display:block
       }
-      
+
       .row{
         display:flex;
         align-items:center;
@@ -194,7 +194,7 @@
         gap:7px;
         max-width:360px
       }
-      
+
       .f label{
         font-size:.82rem;
         font-weight:600;
@@ -211,40 +211,40 @@
         width:100%;
         transition:border-color .16s,box-shadow .16s
       }
-      
+
       .f input:focus,.f select:focus,.f textarea:focus{
         outline:0;
         border-color:#2563eb;
         box-shadow:0 0 0 3px #dbeafe
       }
-      
+
       .f small{
         font-size:.76rem;
         color:#94a3b8
       }
-      
+
       .grid2{
         display:grid;
         grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
         gap:26px
       }
-      
+
       .card{
         background:#fff;
         border-radius:14px;
       }
-      
+
       .card h3{
         font-size:1.05rem;
         margin-bottom:5px
       }
-      
+
       .card .sub{
         font-size:.83rem;
         color:var(--text);
         margin-bottom:20px
       }
-      
+
       .stack{
         display:flex;
         flex-direction:column;
@@ -253,13 +253,13 @@
       .stack .f{
         max-width:none
       }
-      
+
       .two{
         display:grid;
         grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
         gap:16px
       }
-      
+
       .btn{
         font:inherit;
         font-size:.9rem;
@@ -272,17 +272,17 @@
         cursor:pointer;
         align-self:flex-start
       }
-      
+
       .btn:hover{
         opacity:.88
       }
-      
+
       .inline{
         display:flex;
         gap:9px;
         max-width:460px
       }
-      
+
       .inline input{
         flex:1;
         min-width:0;
@@ -292,7 +292,7 @@
         border:1px solid #cbd5e1;
         border-radius:9px
       }
-      
+
       .rowset{
         display:flex;
         justify-content:space-between;
@@ -302,25 +302,25 @@
         border-bottom:1px solid #f1f5f9;
         max-width:520px
       }
-      
+
       .rowset:last-child{
         border-bottom:0
       }
-      
+
       .rowset label{
         cursor:pointer
       }
-      
+
       .rowset b{
         display:block;
         font-size:.9rem
       }
-      
+
       .rowset span{
         font-size:.79rem;
         color:#94a3b8
       }
-      
+
       .rowset input{
         max-width:170px;
         font:inherit;
@@ -328,6 +328,13 @@
         padding:8px 11px;
         border:1px solid #cbd5e1;
         border-radius:8px
+      }
+
+      /* Honeypot field: hidden from real visitors, only bots fill it in */
+      .hp-field {
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
       }
 
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
@@ -375,16 +382,21 @@
       <div class="bio">
         <div class="rules-wrap">
           <div class="card"><h3>Contact form</h3>
-<p class="sub">Get in touch for a trade request or any other inquiry! I usually reply quite fast, but if you don't hear back from me with in 3 days, feel free to send a follow up.</p>
-<form class="stack">
-<div class="two">
-<div class="f"><label for="l1">Trading name</label><input id="l1" type="text"></div>
-<div class="f"><label for="l2">Your list</label><input id="l2" type="text"></div></div>
-<div class="f"><label for="l3">Email address</label><input id="l3" type="email"></div>
-<div class="f"><label for="l4">Get in touch!</label>
-<textarea id="l4" placeholder="Your message..."></textarea></div>
-<button class="btn" type="button">Send</button>
-</form></div>
+<p class="sub">Get in touch for a trade request or any other inquiry. I usually reply quite fast, but if you don't hear back from me with in 3 days, feel free to send a follow up.</p>
+
+<form class="stack" action="https://formsubmit.co/leablegs@gmail.com" method="POST">
+
+  <div class="two">
+    <div class="f"><label for="l1">Trading name</label><input id="l1" name="Trading name" type="text" required></div>
+    <div class="f"><label for="l2">Your list</label><input id="l2" name="Your list" type="text" required></div>
+  </div>
+  <div class="f"><label for="l3">Email address</label><input id="l3" name="Email address" type="email" required></div>
+  <div class="f"><label for="l4">Trade request</label>
+    <textarea id="l4" name="Message" placeholder="Your message..." required></textarea>
+  </div>
+  <input class="btn" type="submit" value="Send">
+</form>
+</div>
       </div>
       <footer>website created using templates by uicookies</footer>
     </div>
