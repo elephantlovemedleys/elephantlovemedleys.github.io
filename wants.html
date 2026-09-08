@@ -415,13 +415,8 @@
           <h1>Wants</h1>
           <p>
             <b>Last updated: September 6, 2026.</b>
-            <br> Click on any row to expand it and display full details. <br> '♡' means higher priority.
+            <br> Click on any row to expand it and display full details. <br> <i class="fa-solid fa-angles-up"></i> means higher priority.
           </p>
-          <div class="bulk" id="bulk">
-            <span id="n"></span>
-            <button onclick="myFunction()">Request</button>
-            <button class="danger" onclick="clearSelection()">Cancel</button>
-          </div>
           <input id="input" type="search" placeholder="Search recordings..." aria-label="Search">
   <select id="Type"><option value="">All</option><option value="type video">Video</option><option value="type audio">Audio</option></select>
         </div>
@@ -430,7 +425,7 @@
             <thead>
               <tr>
                 <th>
-                  <input type="checkbox" id="all" aria-label="Select all">
+                  <i class="fa-solid fa-angles-up"></i>
                 </th>
                 <th>Title</th>
                 <th>Tour</th>
@@ -442,9 +437,7 @@
             <tbody id="rows">
               <!-- new entry ------------------------------------------------------------>
               <tr class="row">
-                <td>
-                  <input type="checkbox" aria-label="Select row">
-                </td>
+                <td></td>
                 <td class="title">13</td>
                 <td class="tour">Broadway</td>
                 <td class="date">2008-09-16</td>
@@ -471,44 +464,7 @@
       <footer>website created using templates by uicookies</footer>
     </div>
     <script>
-      const boxes = [...document.querySelectorAll('#rows input')];
-      const all = document.getElementById('all');
-
-      function sync() {
-        const n = boxes.filter(b => b.checked).length;
-        boxes.forEach(b => b.closest('tr').classList.toggle('sel', b.checked));
-        document.getElementById('bulk').classList.toggle('show', n > 0);
-        document.getElementById('n').textContent = n + ' selected';
-        all.checked = n === boxes.length;
-        all.indeterminate = n > 0 && n < boxes.length;
-      }
-
-      function myFunction() {
-        const selectedRows = boxes.filter(b => b.checked).map(b => b.closest('tr'));
-        if (selectedRows.length === 0) {
-          alert("No items selected!");
-          return;
-        }
-        const text = selectedRows.map(row => {
-          const title = row.querySelector('.title').textContent.trim();
-          const tour = row.querySelector('.tour').textContent.trim();
-          const date = row.querySelector('.date').textContent.trim();
-          const master = row.querySelector('.master').textContent.trim();
-          const type = row.querySelector('.type').textContent.trim();
-          return `${title} | ${tour} | ${date} | ${master} | ${type}`;
-        }).join('\n');
-        navigator.clipboard.writeText(text).then(() => alert("Copied to clipboard!")).catch(() => alert("Copy failed — please try again."));
-      }
-
-      function clearSelection() {
-        boxes.forEach(b => b.checked = false);
-        sync();
-      }
-      boxes.forEach(b => b.addEventListener('change', sync));
-      all.addEventListener('change', () => {
-        boxes.forEach(b => b.checked = all.checked);
-        sync();
-      });
+      
       document.querySelectorAll('.row').forEach(r => {
         r.addEventListener('click', (e) => {
           if (e.target.tagName === 'INPUT') return;
