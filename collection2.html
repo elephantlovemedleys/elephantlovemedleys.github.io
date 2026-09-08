@@ -481,19 +481,21 @@
 		<thead>
 			<tr>
 				<th><input type="checkbox" id="all" aria-label="Select all"></th>
-				<th>Name</th>
-				<th>Position</th>
-				<th>Office</th>
-				<th>Salary</th>
+				<th>Title</th>
+				<th>Tour</th>
+				<th>Date</th>
+				<th>Master</th>
+				<th>Type</th>
 			</tr>
 		</thead>
 		<tfoot>
 			<tr>
 				<th><input type="checkbox" id="all" aria-label="Select all"></th>
-				<th>Name</th>
-				<th>Position</th>
-				<th>Office</th>
-				<th>Salary</th>
+				<th>Title</th>
+				<th>Tour</th>
+				<th>Date</th>
+				<th>Master</th>
+				<th>Type</th>
 			</tr>
 		</tfoot>
 	</table>
@@ -556,22 +558,22 @@ function format(d) {
 	// `d` is the original data object for the row
 	return (
 		'<dl>' +
-		'<dt>Full name:</dt>' +
+		'<dt>Cast:</dt>' +
 		'<dd>' +
 		d.name +
 		'</dd>' +
-		'<dt>Extension number:</dt>' +
+		'<dt>Notes:</dt>' +
 		'<dd>' +
 		d.extn +
 		'</dd>' +
-		'<dt>Extra info:</dt>' +
+		'<dt>Format:</dt>' +
 		'<dd>And any further details here (images etc)...</dd>' +
 		'</dl>'
 	);
 }
 
 let table = new DataTable('#example', {
-	ajax: 'collection2.txt',
+	ajax: 'collection.txt',
 	columns: [
 		{
 			className: 'dt-control',
@@ -579,10 +581,11 @@ let table = new DataTable('#example', {
 			data: null,
 			defaultContent: ''
 		},
-		{ data: 'name' },
-		{ data: 'position' },
-		{ data: 'office' },
-		{ data: 'salary' }
+		{ data: 'title' },
+  		{ data: 'tour' },
+  		{ data: 'date' },
+  		{ data: 'master' },
+  		{ data: 'type' }
 	],
 	order: [[1, 'asc']]
 });
