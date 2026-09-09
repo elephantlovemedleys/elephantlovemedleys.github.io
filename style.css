@@ -45,8 +45,20 @@ h1 {
   border-radius: 10px;
 }
 
+.faq.nft {
+  background-color: #f8e6e4;
+}
+
 .faq-title {
   margin-right: 3em;
+}
+
+.faq-subtitle {
+  display: block;
+  margin: 6px 3em 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
 }
 
 .faq-text {
