@@ -23,6 +23,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1em;
+  line-height: 1.6;
 }
 
 h1 {
@@ -105,7 +106,6 @@ i {
 
 .wrap {
   width: 900px;
-  max-width: calc(100% - 2rem);
   margin: 0 auto;
   padding: 24px 20px 60px;
 }
