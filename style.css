@@ -85,7 +85,7 @@ i {
   width: 30px;
   top: 30px;
   right: 30px;
-  background-color: var(--text-dim);
+  background-color: #f571ae;
   color: white;
   border-radius: 50%;
   border: none;
@@ -108,7 +108,7 @@ i {
 }
 
 .faq.active .faq-toggle {
-  background-color: var(--text-dim);
+  background-color: #f571ae;
 }
 
 .wrap {
