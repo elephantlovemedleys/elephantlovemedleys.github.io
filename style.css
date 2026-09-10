@@ -80,7 +80,9 @@ h1 {
 }
 
 .faq-title {
-  display: inline-flex;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   align-items: center;
   gap: 8px;
   margin-right: .3em;
