@@ -74,13 +74,13 @@ h1 {
 }
 
 .faq-type.video {
-  background: #fbe4e7;
-  color: #fe6e8c
+  background: #f571ae;
+  color: #fbe4e7
 }
 
 .faq-type.audio {
-  background: #fbe4e7;
-  color: #f83b67
+  background: #e45b9c;
+  color: #fbe4e7
 }
 
 .faq-text {
