@@ -11,7 +11,7 @@ const search = () => {
     const product = document.querySelectorAll(".faq");
 
     for (let i = 0; i < product.length; i++) {
-        const matches = product[i].querySelectorAll('.faq-title, .faq-subtitle, .faq-text');
+        const matches = product[i].querySelectorAll('.faq-title, .faq-subtitle-row, .faq-text');
         let textvalue = "";
         matches.forEach(el => textvalue += el.textContent + " ");
 
