@@ -66,6 +66,7 @@ h1 {
   font-size: .75rem;
   font-weight: 700;
   text-align: center;
+  text-transform: uppercase;
   padding: 3px 10px;
   border-radius: 999px;
   background: #eef1f6;
