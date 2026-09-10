@@ -79,6 +79,14 @@ h1 {
   background-color: #f8e4f0;
 }
 
+.faq-title-row {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-right: 40px; 
+}
+
 .faq-title {
   display: flex;
   flex-wrap: wrap;
