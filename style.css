@@ -33,6 +33,34 @@ h1 {
   background-color: var(--bg);
 }
 
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.container form {
+    width: 100%;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.container form input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 8px 10px;
+}
+
+.container form i {
+    padding-left: 10px;
+}
+
 .faq {
   width: 100%;
   box-sizing: border-box;
