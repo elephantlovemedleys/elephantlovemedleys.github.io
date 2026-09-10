@@ -68,6 +68,7 @@ h1 {
   background-color: var(--surface);
   border-radius: 1em;
   padding: 30px;
+  padding-right: 60px;
   position: relative;
   margin-bottom:10px;
   border: 1px solid var(--border);
