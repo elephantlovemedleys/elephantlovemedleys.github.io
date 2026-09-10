@@ -62,7 +62,7 @@ h1 {
 }
 
 .faq-type {
-  width: 70px;
+  width: 50px;
   font-size: .75rem;
   font-weight: 700;
   text-align: center;
@@ -73,13 +73,13 @@ h1 {
 }
 
 .faq-type.video {
-  background: #fe6e8c;
-  color: #fbe4e7
+  background: #fbe4e7;
+  color: #fe6e8c
 }
 
 .faq-type.audio {
-  background: #f83b67;
-  color: #fbe4e7
+  background: #fbe4e7;
+  color: #f83b67
 }
 
 .faq-text {
