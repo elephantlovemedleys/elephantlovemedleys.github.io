@@ -46,6 +46,7 @@ h1 {
     flex-direction: row;
     align-items: center;
     margin-bottom: 1em;
+    overflow: hidden;
 }
 
 .container form input {
@@ -58,7 +59,7 @@ h1 {
 }
 
 .container form i {
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
 .faq {
