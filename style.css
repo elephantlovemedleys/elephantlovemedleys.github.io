@@ -79,7 +79,10 @@ h1 {
 }
 
 .faq-title {
-  margin-right: 3em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: .3em;
 }
 
 .faq-subtitle-row {
