@@ -82,12 +82,26 @@ h1 {
   margin-right: 3em;
 }
 
-.faq-subtitle {
-  display: block;
+.faq-subtitle-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
   margin: 6px 3em 0 0;
+}
+
+.faq-subtitle-row p {
+  margin: 0;
   font-size: 13px;
   font-weight: 600;
   color: var(--text);
+}
+
+.faq-subtitle-row p:not(:last-child)::after {
+  content: "|";
+  margin-left: 6px;
+  color: var(--text-dim);
+  font-weight: 400;
 }
 
 .faq-type {
