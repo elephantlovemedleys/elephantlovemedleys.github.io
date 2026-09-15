@@ -47,7 +47,6 @@ h1 {
     align-items: center;
     margin-bottom: 1em;
     overflow: hidden;
-    position: fixed;
 }
 
 .container form input {
@@ -201,7 +200,6 @@ i {
   max-width: 900px;
   margin: 0 auto;
   padding: 24px 20px 60px;
-  position: fixed;
 }
 
 nav {
@@ -266,7 +264,6 @@ nav svg {
   align-items: center;
   gap: 16px;
   margin-bottom: 28px;
-  position: fixed;
 }
 
 .avatar {
