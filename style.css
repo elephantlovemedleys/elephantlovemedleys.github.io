@@ -47,6 +47,8 @@ h1 {
     align-items: center;
     margin-bottom: 1em;
     overflow: hidden;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 .container form input {
